@@ -59,20 +59,46 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
-.title-logo {
+header {
+  position: relative;
+}
+
+.title-logo img {
   width: 564px;
   height: 112px;
 
   padding-top: 194px;
 }
+.clock {
+  width: 261px;
+  height: 265px;
 
-.title-logo::after {
-  content: "";
-  background-image: url(./src/img/clock.png);
-  left: 0;
+  display: inline-block;
+  position: absolute;
+  top: 120px;
+  left: 152px;
+
+  z-index: -100;
 }
+
+/* .title-logo::after {
+  content: "";
+
+  width: 261px;
+  height: 265px;
+
+  background-image: url(./src/img/clock.png);
+  background-repeat: no-repeat;
+  object-fit: contain;
+  display: inline-block;
+  position: absolute;
+  left: 27%;
+  top: 39%;
+  z-index: -100;
+} */
 
 .practice-make-you {
   font-family: "OTEnjoystoriesBA";
@@ -80,23 +106,31 @@ body {
   font-size: 36px;
   color: #f5df4d;
 
-  text-align: center;
-
   margin-top: 125px;
   margin-bottom: 78px;
 }
 
 .info {
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
   font-size: 18px;
   line-height: 200%;
   position: relative;
+
+  margin-bottom: 102px;
 }
 .info > span {
   font-size: 24px;
   font-weight: bold;
 }
-.info::after {
+.info img {
+  position: absolute;
+  top: -18px;
+  left: 130px;
+}
+/* .info::after {
   content: "";
   width: 493px;
   height: 96px;
@@ -104,8 +138,26 @@ body {
   background-repeat: no-repeat;
   display: inline-block;
   position: absolute;
-  left: 9%;
+  left: 18%;
   top: 0;
+} */
+
+.whatiwant {
+  font-size: 24px;
+  line-height: 4;
+}
+input {
+  width: 228px;
+  height: 57px;
+  border-radius: 7px;
+  border: none;
+  color: black;
+  font-size: 24px;
+
+  text-align: center;
+}
+input::placeholder {
+  color: #babcbe;
 }
 
 .btn1,
@@ -123,6 +175,8 @@ body {
 
   padding: 21px 49px 21px 49px;
 
+  margin-top: 115px;
+
   position: relative;
 }
 
@@ -138,6 +192,17 @@ body {
   bottom: -30%;
 }
 
+.result {
+  font-size: 24px;
+  line-height: 1.1;
+
+  padding-top: 147px;
+}
+.result span {
+  font-size: 72px;
+  font-weight: bold;
+}
+
 .btn2 {
   background-color: white;
   margin-left: 18px;
@@ -148,8 +213,55 @@ footer {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  text-align: center;
   gap: 20px;
 
   margin-top: 130px;
+}
+
+@media (max-width: 800px) {
+  .title-logo img {
+    width: 267px;
+    height: 53px;
+
+    padding-top: 76px;
+  }
+  .practice-make-you {
+    font-size: 22px;
+
+    margin-top: 69px;
+    margin-bottom: 78px;
+  }
+
+  .clock {
+    width: 125px;
+    height: 126px;
+
+    top: 41px;
+    left: 88px;
+
+    z-index: -100;
+  }
+
+  .info {
+    width: 100vw;
+    font-size: 14px;
+    line-height: 200%;
+    position: relative;
+
+    margin-bottom: 102px;
+  }
+  .info span {
+    font-size: 14px;
+  }
+  .info img {
+    width: calc(70% - 10%);
+    position: absolute;
+    left: 20%;
+  }
+
+  /* .title-logo::after {
+    width: 125px;
+    height: 126px;
+    object-fit: contain;
+  } */
 }
